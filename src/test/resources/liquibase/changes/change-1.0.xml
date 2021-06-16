@@ -1,0 +1,33 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                           http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="1.0.0" author="Aliaksei Babashau">
+        <sql>
+            create table persons
+            (
+            id       bigint auto_increment
+            primary key,
+            email    varchar(255) null,
+            name     varchar(255) null,
+            password varchar(255) null
+            );
+        </sql>
+
+        <sql>
+            create table animals
+            (
+            id          bigint auto_increment
+            primary key,
+            name        varchar(255) null,
+            type_animal varchar(255) null,
+            person_id   bigint       null,
+            constraint FK6qj68n7qaqt6vgllg14hlu37o
+            foreign key (person_id) references persons (id)
+            );
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

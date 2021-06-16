@@ -1,0 +1,1 @@
+INSERT INTO persons(id, email, name, password) values (1, 'bobson@mail.ru', 'Bob', '222244');

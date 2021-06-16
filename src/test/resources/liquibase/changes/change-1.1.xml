@@ -1,0 +1,23 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                           http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="1.0.0" author="Aliaksei Babashau">
+        <sql>
+            insert into persons(id, email, name, password)
+            values
+            (1, 'bobson@mail.ru', 'Bob', '222244'),
+            (2, 'Jhon@gmail.com', 'Jhon', '12345678');
+        </sql>
+
+        <sql>
+            insert into animals(id, name, type_animal, person_id)
+            values
+            (1, 'Bob', 'CAT', '2'),
+            (2, 'Rob', 'DOG', '2');
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
