@@ -15,6 +15,7 @@ import lombok.var;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static by.leverx.pets.mapper.AnimalMapper.ANIMAL_MAPPER;
@@ -86,10 +87,10 @@ public class PersonServiceImpl implements PersonService {
     }
 
     private Person fillFieldsPerson(Person personToChange, PersonUpdateDto updateDto) {
-        List<Animal> animals =
-                updateDto.getAnimals().stream()
-                        .map(ANIMAL_MAPPER::mapToEntity)
-                        .collect(toList());
+        List<Animal> animals = new ArrayList<>();
+//                updateDto.getAnimals().stream()
+////                        .map(ANIMAL_MAPPER::mapToEntity)
+//                        .collect(toList());
 
         personToChange.setName(updateDto.getName());
         personToChange.setAnimals(animals);

@@ -16,4 +16,7 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 
     @Query(value = "SELECT * FROM persons p WHERE p.email = :email", nativeQuery = true)
     Optional<Person> findByEmail(@Param("email") String email);
+
+    @Query(value = "SELECT * FROM persons p JOIN animals a ON p.id = a.person_id AND a.id = :animalId", nativeQuery = true)
+    Optional<Person> findByAnimalId(@Param("animalId") Long animalId);
 }
