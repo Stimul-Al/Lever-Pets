@@ -7,6 +7,8 @@ import lombok.var;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /**
  *
  * @author aliaksei.babashau
@@ -20,17 +22,18 @@ public class DealServiceTest extends AbstractIntegrationTest {
         dealCreateDto.setFirstAnimal(1L);
         dealCreateDto.setSecondAnimal(4L);
 
-        var beforeFirstAnimal = animalRepository.findById(1L).orElseThrow(() -> new AnimalNotFoundException(1L));
-        var beforeSecondAnimal = animalRepository.findById(4L).orElseThrow(() -> new AnimalNotFoundException(4L));
+        var ownerFirstAnimalBefore = personRepository.findByAnimalId(dealCreateDto.getFirstAnimal()).orElse(null);
+        var ownerSecondAnimalBefore = personRepository.findByAnimalId(dealCreateDto.getSecondAnimal()).orElse(null);
 
         //when
         dealService.deal(dealCreateDto);
 
-        var afterFirstAnimal = animalRepository.findById(1L).orElseThrow(() -> new AnimalNotFoundException(1L));
-        var afterSecondAnimal = animalRepository.findById(4L).orElseThrow(() -> new AnimalNotFoundException(4L));
+        var ownerFirstAnimalAfter = personRepository.findByAnimalId(dealCreateDto.getFirstAnimal()).orElse(null);
+        var ownerSecondAnimalAfter = personRepository.findByAnimalId(dealCreateDto.getSecondAnimal()).orElse(null);
 
         //then
-        Assertions.assertEquals(beforeFirstAnimal.getPersons().get(0).getId(), afterSecondAnimal.getPersons().get(0).getId());
+        assertEquals(ownerFirstAnimalBefore.getId(), ownerSecondAnimalAfter.getId());
+        assertEquals(ownerSecondAnimalBefore.getId(), ownerFirstAnimalAfter.getId());
     }
 
 }

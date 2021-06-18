@@ -74,7 +74,7 @@ public class AnimalServiceTest extends AbstractIntegrationTest {
     @Test
     void delete() {
         //given
-        long existingId = 1;
+        long existingId = 8;
 
         //when
         animalService.delete(existingId);

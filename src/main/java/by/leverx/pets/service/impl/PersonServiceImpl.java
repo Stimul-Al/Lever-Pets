@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static by.leverx.pets.mapper.PersonMapper.PERSON_MAPPER;
+import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -27,7 +28,6 @@ import static java.util.stream.Collectors.toList;
  */
 @Slf4j
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class PersonServiceImpl implements PersonService {
 
@@ -43,6 +43,7 @@ public class PersonServiceImpl implements PersonService {
         return personFullDto;
     }
 
+    @Transactional(readOnly = true)
     @Override public PersonFullDto findByEmail(String email) {
         PersonFullDto personFullDto = personRepository.findByEmail(email)
                 .map(PERSON_MAPPER::mapToDto)
@@ -64,16 +65,18 @@ public class PersonServiceImpl implements PersonService {
         return personPreviewDtos;
     }
 
+    @Transactional
     @Override public PersonFullDto create(PersonCreateDto createDto) {
         Person personToSave = PERSON_MAPPER.mapToEntity(createDto);
 
-//        personToSave.getAnimals().forEach(animal -> animal.setPerson(personToSave));
+        personToSave.getAnimals().forEach(animal -> animal.setPersons(asList(personToSave)));
         var savedPerson = personRepository.save(personToSave);
 
         log.info("PersonService -> created person. Id: {}", savedPerson.getId());
         return PERSON_MAPPER.mapToDto(savedPerson);
     }
 
+    @Transactional
     @Override public PersonFullDto update(PersonUpdateDto updateDto) {
         Person existingPerson = personRepository.findById(updateDto.getId())
                 .orElseThrow(() -> new PersonNotFoundException(updateDto.getId()));
@@ -85,6 +88,7 @@ public class PersonServiceImpl implements PersonService {
         return PERSON_MAPPER.mapToDto(changedPerson);
     }
 
+    @Transactional
     private Person fillFieldsPerson(Person personToChange, PersonUpdateDto updateDto) {
         List<Animal> animals = new ArrayList<>();
 //                updateDto.getAnimals().stream()

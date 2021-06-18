@@ -32,7 +32,7 @@ public class PersonServiceTest extends AbstractIntegrationTest {
     @Test
     void updateTest() {
         //given
-        long existingId = 2;
+        long existingId = 1;
         var existingPerson = personService.findById(existingId);
         PersonUpdateDto personUpdateDto = new PersonUpdateDto();
         personUpdateDto.setId(existingPerson.getId());
@@ -50,7 +50,7 @@ public class PersonServiceTest extends AbstractIntegrationTest {
     @Test
     void findPersonById_happyPath() {
         //given
-        long existingId = 2;
+        long existingId = 1;
 
         //when
         var foundPerson = personService.findById(existingId);
@@ -86,7 +86,7 @@ public class PersonServiceTest extends AbstractIntegrationTest {
     @Test
     void delete() {
         //given
-        long existingId = 1;
+        long existingId = 2;
 
         //when
         personService.delete(existingId);

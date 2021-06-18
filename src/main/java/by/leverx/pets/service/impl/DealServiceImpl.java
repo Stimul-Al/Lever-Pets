@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import lombok.var;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
@@ -25,9 +26,9 @@ import org.springframework.stereotype.Service;
 public class DealServiceImpl implements DealService {
 
     private final AnimalRepository animalRepository;
-
     private final PersonRepository personRepository;
 
+    @Transactional
     @Override public void deal(DealDto dealDto) {
         validateAnimal(dealDto.getFirstAnimal(), dealDto.getSecondAnimal());
 

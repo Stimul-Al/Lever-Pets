@@ -3,6 +3,7 @@ package by.leverx.pets.integration;
 import by.leverx.pets.PetsApplication;
 import by.leverx.pets.integration.init.MySqlInitializer;
 import by.leverx.pets.repository.AnimalRepository;
+import by.leverx.pets.repository.PersonRepository;
 import by.leverx.pets.service.AnimalService;
 import by.leverx.pets.service.DealService;
 import by.leverx.pets.service.PersonService;
@@ -33,6 +34,9 @@ public abstract class AbstractIntegrationTest {
 
     @Autowired
     protected AnimalRepository animalRepository;
+
+    @Autowired
+    protected PersonRepository personRepository;
 }
 // CHECKSTYLE:ON
 

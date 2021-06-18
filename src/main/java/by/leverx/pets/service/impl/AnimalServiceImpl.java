@@ -24,6 +24,7 @@ import static java.util.stream.Collectors.toList;
  */
 @Slf4j
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class AnimalServiceImpl implements AnimalService {
 
@@ -49,6 +50,7 @@ public class AnimalServiceImpl implements AnimalService {
         return animalFullDtos;
     }
 
+    @Transactional
     @Override public AnimalFullDto create(AnimalCreateDto createDto) {
         Animal animalToSave = ANIMAL_MAPPER.mapToEntity(createDto);
 
@@ -58,6 +60,7 @@ public class AnimalServiceImpl implements AnimalService {
         return ANIMAL_MAPPER.mapToDto(savedAnimal);
     }
 
+    @Transactional
     @Override public AnimalFullDto update(AnimalUpdateDto updateDto) {
         Animal existingEntity = animalRepository.findById(updateDto.getId())
                 .orElseThrow(() -> new AnimalNotFoundException(updateDto.getId()));
@@ -69,6 +72,7 @@ public class AnimalServiceImpl implements AnimalService {
         return ANIMAL_MAPPER.mapToDto(changedAnimal);
     }
 
+    @Transactional
     private Animal fillFieldsEntity(Animal animal, AnimalUpdateDto updateDto) {
         animal.setTypeAnimal(updateDto.getTypeAnimal());
         animal.setName(updateDto.getName());
@@ -76,6 +80,7 @@ public class AnimalServiceImpl implements AnimalService {
         return animal;
     }
 
+    @Transactional
     @Override public void delete(Long id) {
         if (!animalRepository.existsById(id)) {
             throw new AnimalNotFoundException(id);
