@@ -5,7 +5,6 @@ import by.leverx.pets.entity.Animal;
 import by.leverx.pets.entity.Person;
 import by.leverx.pets.exception.AnimalNotFoundException;
 import by.leverx.pets.exception.AnimalSameException;
-import by.leverx.pets.exception.PersonNotFoundException;
 import by.leverx.pets.exception.PersonSameException;
 import by.leverx.pets.repository.AnimalRepository;
 import by.leverx.pets.repository.PersonRepository;
@@ -15,6 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 import lombok.var;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  *
@@ -26,33 +27,32 @@ import org.springframework.transaction.annotation.Transactional;
 public class DealServiceImpl implements DealService {
 
     private final AnimalRepository animalRepository;
+
     private final PersonRepository personRepository;
 
     @Transactional
     @Override public void deal(DealDto dealDto) {
-        validateAnimal(dealDto.getFirstAnimal(), dealDto.getSecondAnimal());
 
-        var personFirstAnimal = getPersonByAnimalId(dealDto.getFirstAnimal());
-        var personSecondAnimal = getPersonByAnimalId(dealDto.getSecondAnimal());
-
-        validatePerson(personFirstAnimal, personSecondAnimal);
+        var ownersFirstAnimal = getPersonsByAnimalId(dealDto.getFirstAnimal());
+        var ownersSecondAnimal = getPersonsByAnimalId(dealDto.getSecondAnimal());
 
         var firstAnimal = getAnimal(dealDto.getFirstAnimal());
         var secondAnimal = getAnimal(dealDto.getSecondAnimal());
 
-        personFirstAnimal.getAnimals().remove(firstAnimal);
-        personFirstAnimal.getAnimals().add(secondAnimal);
+        validate(ownersFirstAnimal, ownersSecondAnimal, firstAnimal, secondAnimal);
 
-        personSecondAnimal.getAnimals().remove(secondAnimal);
-        personSecondAnimal.getAnimals().add(firstAnimal);
+        ownersFirstAnimal.forEach(owner -> owner.getAnimals().remove(firstAnimal));
+        ownersFirstAnimal.forEach(owner -> owner.getAnimals().add(secondAnimal));
 
-        personRepository.save(personFirstAnimal);
-        personRepository.save(personSecondAnimal);
+        ownersSecondAnimal.forEach(owner -> owner.getAnimals().remove(secondAnimal));
+        ownersSecondAnimal.forEach(owner -> owner.getAnimals().add(firstAnimal));
+
+        personRepository.saveAll(ownersFirstAnimal);
+        personRepository.saveAll(ownersSecondAnimal);
     }
 
-    private Person getPersonByAnimalId(Long animalId) {
-        return personRepository.findByAnimalId(animalId)
-                .orElseThrow(() -> new PersonNotFoundException("Person not found by animal Id:", animalId));
+    private List<Person> getPersonsByAnimalId(Long animalId) {
+        return personRepository.findByAnimalId(animalId);
     }
 
     private Animal getAnimal(Long id) {
@@ -60,7 +60,12 @@ public class DealServiceImpl implements DealService {
                 .orElseThrow(() -> new AnimalNotFoundException(id));
     }
 
-    private void validatePerson(Person first, Person second) {
+    private void validate(List<Person> ownersSecondAnimal, List<Person> ownersFirstAnimal, Animal firstAnimal, Animal secondAnimal) {
+        validateAnimal(firstAnimal.getId(), secondAnimal.getId());
+        validatePerson(ownersFirstAnimal, ownersSecondAnimal);
+    }
+
+    private void validatePerson(List<Person> first, List<Person> second) {
         if (first.equals(second)) {
             throw new PersonSameException("Owner of both pets");
         }

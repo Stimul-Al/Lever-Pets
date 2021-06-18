@@ -22,18 +22,18 @@ public class DealServiceTest extends AbstractIntegrationTest {
         dealCreateDto.setFirstAnimal(1L);
         dealCreateDto.setSecondAnimal(4L);
 
-        var ownerFirstAnimalBefore = personRepository.findByAnimalId(dealCreateDto.getFirstAnimal()).orElse(null);
-        var ownerSecondAnimalBefore = personRepository.findByAnimalId(dealCreateDto.getSecondAnimal()).orElse(null);
+        var ownerFirstAnimalBefore = personRepository.findByAnimalId(dealCreateDto.getFirstAnimal());
+        var ownerSecondAnimalBefore = personRepository.findByAnimalId(dealCreateDto.getSecondAnimal());
 
         //when
         dealService.deal(dealCreateDto);
 
-        var ownerFirstAnimalAfter = personRepository.findByAnimalId(dealCreateDto.getFirstAnimal()).orElse(null);
-        var ownerSecondAnimalAfter = personRepository.findByAnimalId(dealCreateDto.getSecondAnimal()).orElse(null);
+        var ownerFirstAnimalAfter = personRepository.findByAnimalId(dealCreateDto.getFirstAnimal());
+        var ownerSecondAnimalAfter = personRepository.findByAnimalId(dealCreateDto.getSecondAnimal());
 
         //then
-        assertEquals(ownerFirstAnimalBefore.getId(), ownerSecondAnimalAfter.getId());
-        assertEquals(ownerSecondAnimalBefore.getId(), ownerFirstAnimalAfter.getId());
+        assertEquals(ownerFirstAnimalBefore, ownerSecondAnimalAfter);
+        assertEquals(ownerSecondAnimalBefore, ownerFirstAnimalAfter);
     }
 
 }
