@@ -6,6 +6,16 @@
 
     <changeSet id="1.0.0" author="Aliaksei Babashau">
         <sql>
+            create table animals
+            (
+            id bigint auto_increment
+            primary key,
+            name varchar(255) null,
+            type_animal varchar(255) null
+            );
+        </sql>
+
+        <sql>
             create table persons
             (
             id bigint auto_increment
@@ -17,44 +27,14 @@
         </sql>
 
         <sql>
-            create table animals
-            (
-            id bigint auto_increment
-            primary key,
-            name varchar(255) null,
-            type_animal varchar(255) null,
-            person_id bigint null,
-            constraint FK6qj68n7qaqt6vgllg14hlu37o
-            foreign key (person_id) references persons (id)
-            );
-        </sql>
-
-        <sql>
-            create table deals
-            (
-            id bigint auto_increment
-            primary key,
-            deal_date datetime(6) null,
-            first_animal_id bigint null,
-            second_animal_id bigint null,
-            constraint FK1lnxxsrd7bd4l5ehlw3o8y4ub
-            foreign key (second_animal_id) references animals (id),
-            constraint FKi3k8hro5dcbb7j2cmmf9feoi0
-            foreign key (first_animal_id) references animals (id)
-            );
-        </sql>
-
-        <sql>
-            create table animals_deals
+            create table persons_animals
             (
             animal_id bigint not null,
-            deals_id bigint not null,
-            constraint UK_6a26g74c1pyt72q57ox9agv3r
-            unique (deals_id),
-            constraint FK93nubrd926ppsu3pb3a6syktu
-            foreign key (animal_id) references animals (id),
-            constraint FKlg4lhjuordxi3i4o9uj2i1k7j
-            foreign key (deals_id) references deals (id)
+            person_id bigint not null,
+            constraint FKjjem7ctnx8a18kkct60k57yoy
+            foreign key (animal_id) references persons (id),
+            constraint FKk14wf2p4ny6vivy597pfusxci
+            foreign key (person_id) references animals (id)
             );
         </sql>
     </changeSet>

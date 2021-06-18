@@ -11,10 +11,11 @@ import org.springframework.data.repository.query.Param;
  */
 public interface AnimalRepository extends JpaRepository<Animal, Long> {
 
-    @Query(value = "UPDATE animals a SET person_id = :ownerSecondAnimal WHERE a.id = :firstAnimal;" +
-                    "UPDATE animals a SET person_id = :ownerFirstAnimal WHERE a.id = :secondAnimal; ", nativeQuery = true)
-    void dealTwoAnimals(@Param("firstAnimal") Long firstAnimal,
-                        @Param("ownerFirstAnimal") Long ownerFirstAnimal,
-                        @Param("secondAnimal") Long secondAnimal,
-                        @Param("ownerSecondAnimal") Long ownerSecondAnimal);
+    @Query(value = "UPDATE persons_animals p_a " +
+                        "SET p_a.person_id = :ownerAnimal " +
+                        "WHERE p_a.animal_id = :animal",
+                    nativeQuery = true)
+    void dealTwoAnimals(@Param("ownerAnimal") Long ownerAnimal,
+                        @Param("animal") Long animal);
+
 }

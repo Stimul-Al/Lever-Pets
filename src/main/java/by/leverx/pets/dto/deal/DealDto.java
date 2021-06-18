@@ -6,7 +6,7 @@ import lombok.Data;
 import javax.validation.constraints.NotNull;
 
 @Data
-public class DealCreateDto {
+public class DealDto {
 
     @NotNull
     @JsonProperty("first_animal")

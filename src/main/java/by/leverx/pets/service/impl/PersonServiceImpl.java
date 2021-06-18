@@ -68,7 +68,7 @@ public class PersonServiceImpl implements PersonService {
     @Override public PersonFullDto create(PersonCreateDto createDto) {
         Person personToSave = PERSON_MAPPER.mapToEntity(createDto);
 
-        personToSave.getAnimals().forEach(animal -> animal.setPerson(personToSave));
+//        personToSave.getAnimals().forEach(animal -> animal.setPerson(personToSave));
         var savedPerson = personRepository.save(personToSave);
 
         log.info("PersonService -> created person. Id: {}", savedPerson.getId());

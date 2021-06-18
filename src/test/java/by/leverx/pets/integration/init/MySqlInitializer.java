@@ -26,7 +26,7 @@ public class MySqlInitializer implements ApplicationContextInitializer<Configura
                 "spring.liquibase.url=" + MYSQL.getJdbcUrl(),
                 "spring.liquibase.user=" + MYSQL.getUsername(),
                 "spring.liquibase.password=" + MYSQL.getPassword(),
-                "spring.liquibase.change-log=classpath:liquibase/master.xml",
+                "spring.liquibase.change-log=classpath:db/liquibase/master.xml",
                 "spring.liquibase.enabled=true"
 
         ).applyTo(configurableApplicationContext.getEnvironment());

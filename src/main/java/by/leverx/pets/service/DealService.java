@@ -1,9 +1,8 @@
 package by.leverx.pets.service;
 
-import by.leverx.pets.dto.deal.DealCreateDto;
-import by.leverx.pets.dto.deal.DealFullDto;
+import by.leverx.pets.dto.deal.DealDto;
 
 public interface DealService {
 
-    DealFullDto deal(DealCreateDto createDto);
+    void deal(DealDto createDto);
 }

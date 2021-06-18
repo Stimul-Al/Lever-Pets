@@ -44,7 +44,7 @@ public class AnimalServiceTest extends AbstractIntegrationTest {
     }
 
     @Test
-    void findPersonById_happyPath() {
+    void findAnimalById_happyPath() {
         //given
         long existingId = 2;
 
