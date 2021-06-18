@@ -50,7 +50,7 @@ public class Person {
     @EqualsAndHashCode.Exclude
     @ManyToMany(cascade = ALL)
     @JoinTable(name = "persons_animals",
-            joinColumns = {@JoinColumn(name = "animal_id")},
-            inverseJoinColumns = {@JoinColumn(name = "person_id")})
+            joinColumns = {@JoinColumn(name = "person_id")},
+            inverseJoinColumns = {@JoinColumn(name = "animal_id")})
     private List<Animal> animals = new ArrayList<>();
 }

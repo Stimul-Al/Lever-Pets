@@ -13,7 +13,7 @@ import org.testcontainers.utility.DockerImageName;
  */
 public class MySqlInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
-    private static final DockerImageName DOCKER_IMAGE_NAME = DockerImageName.parse("mysql:latest");
+    private static final DockerImageName DOCKER_IMAGE_NAME = DockerImageName.parse("mysql:8.0.25");
 
     @Container
     private static final MySQLContainer<?> MYSQL = new MySQLContainer<>(DOCKER_IMAGE_NAME);
@@ -30,7 +30,7 @@ public class MySqlInitializer implements ApplicationContextInitializer<Configura
                 "spring.liquibase.url=" + MYSQL.getJdbcUrl(),
                 "spring.liquibase.user=" + MYSQL.getUsername(),
                 "spring.liquibase.password=" + MYSQL.getPassword(),
-                "spring.liquibase.change-log=classpath:db/liquibase/master.xml",
+                "spring.liquibase.change-log=classpath:liquibase/master.xml",
                 "spring.liquibase.enabled=true"
 
         ).applyTo(configurableApplicationContext.getEnvironment());
