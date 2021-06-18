@@ -7,6 +7,10 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.utility.DockerImageName;
 
+/**
+ *
+ * @author aliaksei.babashau
+ */
 public class MySqlInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
     private static final DockerImageName DOCKER_IMAGE_NAME = DockerImageName.parse("mysql:latest");

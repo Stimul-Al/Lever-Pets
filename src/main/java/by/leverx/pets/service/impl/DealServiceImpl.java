@@ -15,6 +15,10 @@ import lombok.extern.slf4j.Slf4j;
 import lombok.var;
 import org.springframework.stereotype.Service;
 
+/**
+ *
+ * @author aliaksei.babashau
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -43,9 +47,6 @@ public class DealServiceImpl implements DealService {
 
         personRepository.save(personFirstAnimal);
         personRepository.save(personSecondAnimal);
-
-//        animalRepository.dealTwoAnimals(personSecondAnimal.getId(), dealDto.getFirstAnimal());
-//        animalRepository.dealTwoAnimals(personFirstAnimal.getId(), dealDto.getSecondAnimal());
     }
 
     private Person getPersonByAnimalId(Long animalId) {

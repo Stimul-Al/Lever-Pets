@@ -5,6 +5,10 @@ import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ *
+ * @author aliaksei.babashau
+ */
 @Data
 public class DealDto {
 

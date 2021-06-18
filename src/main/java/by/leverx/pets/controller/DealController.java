@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
+/**
+ *
+ * @author aliaksei.babashau
+ */
 @RestController
 @RequestMapping("/deals")
 @RequiredArgsConstructor

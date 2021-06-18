@@ -1,7 +1,5 @@
 package by.leverx.pets.dto.animal;
 
-import by.leverx.pets.dto.person.PersonFullDto;
-import by.leverx.pets.dto.person.PersonPreviewDto;
 import by.leverx.pets.entity.enums.TypeAnimal;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

@@ -3,15 +3,17 @@ package by.leverx.pets.repository;
 import by.leverx.pets.entity.Animal;
 import by.leverx.pets.entity.Person;
 import by.leverx.pets.integration.AbstractIntegrationTest;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import static by.leverx.pets.entity.enums.TypeAnimal.CAT;
 import static java.util.Arrays.asList;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ *
+ * @author aliaksei.babashau
+ */
 public class PersonRepositoryTest extends AbstractIntegrationTest {
 
     @Autowired

@@ -4,7 +4,6 @@ import by.leverx.pets.dto.animal.AnimalCreateDto;
 import by.leverx.pets.dto.animal.AnimalFullDto;
 import by.leverx.pets.entity.Animal;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 /**

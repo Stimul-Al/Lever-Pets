@@ -6,10 +6,13 @@ import by.leverx.pets.integration.AbstractIntegrationTest;
 import by.leverx.pets.repository.AnimalRepository;
 import by.leverx.pets.service.DealService;
 import lombok.var;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ *
+ * @author aliaksei.babashau
+ */
 public class DealServiceTest extends AbstractIntegrationTest {
 
     @Autowired

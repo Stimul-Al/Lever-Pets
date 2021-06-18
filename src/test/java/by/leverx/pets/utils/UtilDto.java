@@ -2,7 +2,6 @@ package by.leverx.pets.utils;
 
 import by.leverx.pets.dto.animal.AnimalCreateDto;
 import by.leverx.pets.dto.person.PersonCreateDto;
-import by.leverx.pets.entity.enums.TypeAnimal;
 
 import static by.leverx.pets.entity.enums.TypeAnimal.CAT;
 import static java.util.Arrays.asList;
@@ -11,6 +10,7 @@ import static java.util.Arrays.asList;
  *
  * @author aliaksei.babashau
  */
+// CHECKSTYLE:OFF
 public class UtilDto {
 
     public static PersonCreateDto getPersonCreateDto() {
@@ -35,3 +35,4 @@ public class UtilDto {
                 .build();
     }
 }
+// CHECKSTYLE:ON

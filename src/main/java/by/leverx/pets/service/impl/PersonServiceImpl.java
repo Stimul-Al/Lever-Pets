@@ -18,7 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-import static by.leverx.pets.mapper.AnimalMapper.ANIMAL_MAPPER;
 import static by.leverx.pets.mapper.PersonMapper.PERSON_MAPPER;
 import static java.util.stream.Collectors.toList;
 

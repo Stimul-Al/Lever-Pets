@@ -9,10 +9,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
+/**
+ *
+ * @author aliaksei.babashau
+ */
 @Testcontainers
 @SpringBootTest
 @ContextConfiguration(initializers = MySqlInitializer.class,
-                        classes = PetsApplication.class)
+        classes = PetsApplication.class)
+// CHECKSTYLE:OFF
 public abstract class AbstractIntegrationTest {
 
     @Autowired
@@ -21,3 +26,7 @@ public abstract class AbstractIntegrationTest {
     @Autowired
     protected AnimalService animalService;
 }
+// CHECKSTYLE:ON
+
+
+
