@@ -32,9 +32,9 @@
             animal_id bigint not null,
             person_id bigint not null,
             constraint FKjjem7ctnx8a18kkct60k57yoy
-            foreign key (animal_id) references persons (id),
+            foreign key (animal_id) references animals (id),
             constraint FKk14wf2p4ny6vivy597pfusxci
-            foreign key (person_id) references animals (id)
+            foreign key (person_id) references persons (id)
             );
         </sql>
     </changeSet>

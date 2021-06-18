@@ -1,16 +1,16 @@
 package by.leverx.pets.repository;
 
+import by.leverx.pets.entity.Animal;
+import by.leverx.pets.entity.Person;
 import by.leverx.pets.integration.AbstractIntegrationTest;
-import by.leverx.pets.mapper.PersonMapper;
-import by.leverx.pets.utils.UtilDto;
-import lombok.var;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
-import static by.leverx.pets.mapper.PersonMapper.PERSON_MAPPER;
-import static by.leverx.pets.utils.UtilDto.getPersonCreateDto;
+import static by.leverx.pets.entity.enums.TypeAnimal.CAT;
+import static java.util.Arrays.asList;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PersonRepositoryTest extends AbstractIntegrationTest {
 
@@ -20,12 +20,24 @@ public class PersonRepositoryTest extends AbstractIntegrationTest {
     @Test
     void createTest() {
         //given
-        var personToSave = PERSON_MAPPER.mapToEntity(getPersonCreateDto());
+        Animal animal = Animal.builder()
+                .typeAnimal(CAT)
+                .name("space")
+                .build();
+
+        Person person = Person.builder()
+                .animals(asList(animal))
+                .name("Alex")
+                .password("12345678")
+                .email("alexmail@mail.ru")
+                .build();
+
+        animal.setPersons(asList(person));
 
         //when
-        personRepository.save(personToSave);
+        personRepository.save(person);
 
         //then
-        Assertions.assertNotNull(personToSave.getId());
+        assertNotNull(person.getId());
     }
 }
