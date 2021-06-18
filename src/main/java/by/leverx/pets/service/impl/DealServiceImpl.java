@@ -41,14 +41,20 @@ public class DealServiceImpl implements DealService {
 
         validate(ownersFirstAnimal, ownersSecondAnimal, firstAnimal, secondAnimal);
 
-        ownersFirstAnimal.forEach(owner -> owner.getAnimals().remove(firstAnimal));
-        ownersFirstAnimal.forEach(owner -> owner.getAnimals().add(secondAnimal));
+        saveChanges(exchangeAnimals(ownersFirstAnimal, firstAnimal, secondAnimal),
+                        exchangeAnimals(ownersSecondAnimal, secondAnimal, firstAnimal));
+    }
 
-        ownersSecondAnimal.forEach(owner -> owner.getAnimals().remove(secondAnimal));
-        ownersSecondAnimal.forEach(owner -> owner.getAnimals().add(firstAnimal));
-
+    private void saveChanges(List<Person> ownersFirstAnimal, List<Person> ownersSecondAnimal) {
         personRepository.saveAll(ownersFirstAnimal);
         personRepository.saveAll(ownersSecondAnimal);
+    }
+
+    private List<Person> exchangeAnimals(List<Person> owners, Animal from, Animal to) {
+        owners.forEach(owner -> owner.getAnimals().remove(from));
+        owners.forEach(owner -> owner.getAnimals().add(to));
+
+        return owners;
     }
 
     private List<Person> getPersonsByAnimalId(Long animalId) {
