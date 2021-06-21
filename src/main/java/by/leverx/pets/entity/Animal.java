@@ -12,9 +12,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 import static javax.persistence.EnumType.STRING;
 
@@ -37,9 +37,8 @@ public class Animal {
     @Column(name = "name")
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "person_id")
-    private Person person;
+    @ManyToMany(mappedBy = "animals")
+    private List<Person> persons;
 
     @Enumerated(STRING)
     private TypeAnimal typeAnimal;

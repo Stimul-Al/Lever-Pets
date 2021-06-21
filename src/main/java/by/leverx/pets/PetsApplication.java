@@ -3,12 +3,11 @@ package by.leverx.pets;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.swing.Spring;
-
 /**
  *
  * @author aliaksei.babashau
  */
+// CHECKSTYLE:OFF
 @SpringBootApplication
 public class PetsApplication {
 
@@ -17,3 +16,4 @@ public class PetsApplication {
     }
 
 }
+// CHECKSTYLE:ON

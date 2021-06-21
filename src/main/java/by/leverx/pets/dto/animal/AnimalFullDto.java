@@ -17,9 +17,6 @@ public class AnimalFullDto {
     @ApiModelProperty(example = "Bob", notes = "Name of this animal")
     private String name;
 
-    @ApiModelProperty(example = "1", notes = "Id of owner this animal")
-    private Long personId;
-
     @ApiModelProperty(example = "CAT", notes = "Type of this animal")
     private TypeAnimal typeAnimal;
 }

@@ -4,7 +4,7 @@ import by.leverx.pets.dto.animal.AnimalCreateDto;
 import by.leverx.pets.dto.animal.AnimalFullDto;
 import by.leverx.pets.dto.animal.AnimalUpdateDto;
 import by.leverx.pets.entity.Animal;
-import by.leverx.pets.exception.AnimalNotFoundException;
+import by.leverx.pets.exception.exception.AnimalNotFoundException;
 import by.leverx.pets.repository.AnimalRepository;
 import by.leverx.pets.service.AnimalService;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +24,7 @@ import static java.util.stream.Collectors.toList;
  */
 @Slf4j
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class AnimalServiceImpl implements AnimalService {
 
@@ -49,6 +50,7 @@ public class AnimalServiceImpl implements AnimalService {
         return animalFullDtos;
     }
 
+    @Transactional
     @Override public AnimalFullDto create(AnimalCreateDto createDto) {
         Animal animalToSave = ANIMAL_MAPPER.mapToEntity(createDto);
 
@@ -58,6 +60,7 @@ public class AnimalServiceImpl implements AnimalService {
         return ANIMAL_MAPPER.mapToDto(savedAnimal);
     }
 
+    @Transactional
     @Override public AnimalFullDto update(AnimalUpdateDto updateDto) {
         Animal existingEntity = animalRepository.findById(updateDto.getId())
                 .orElseThrow(() -> new AnimalNotFoundException(updateDto.getId()));
@@ -76,6 +79,7 @@ public class AnimalServiceImpl implements AnimalService {
         return animal;
     }
 
+    @Transactional
     @Override public void delete(Long id) {
         if (!animalRepository.existsById(id)) {
             throw new AnimalNotFoundException(id);

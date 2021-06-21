@@ -12,6 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ *
+ * @author aliaksei.babashau
+ */
 public class AnimalServiceTest extends AbstractIntegrationTest {
 
     @Test
@@ -44,7 +48,7 @@ public class AnimalServiceTest extends AbstractIntegrationTest {
     }
 
     @Test
-    void findPersonById_happyPath() {
+    void findAnimalById_happyPath() {
         //given
         long existingId = 2;
 
@@ -70,7 +74,7 @@ public class AnimalServiceTest extends AbstractIntegrationTest {
     @Test
     void delete() {
         //given
-        long existingId = 1;
+        long existingId = 8;
 
         //when
         animalService.delete(existingId);

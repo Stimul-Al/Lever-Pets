@@ -6,7 +6,7 @@ import by.leverx.pets.dto.person.PersonPreviewDto;
 import by.leverx.pets.dto.person.PersonUpdateDto;
 import by.leverx.pets.entity.Animal;
 import by.leverx.pets.entity.Person;
-import by.leverx.pets.exception.PersonNotFoundException;
+import by.leverx.pets.exception.exception.PersonNotFoundException;
 import by.leverx.pets.repository.PersonRepository;
 import by.leverx.pets.service.PersonService;
 import lombok.RequiredArgsConstructor;
@@ -15,10 +15,11 @@ import lombok.var;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import static by.leverx.pets.mapper.AnimalMapper.ANIMAL_MAPPER;
 import static by.leverx.pets.mapper.PersonMapper.PERSON_MAPPER;
+import static java.util.Collections.singletonList;
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -27,7 +28,6 @@ import static java.util.stream.Collectors.toList;
  */
 @Slf4j
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class PersonServiceImpl implements PersonService {
 
@@ -43,6 +43,7 @@ public class PersonServiceImpl implements PersonService {
         return personFullDto;
     }
 
+    @Transactional(readOnly = true)
     @Override public PersonFullDto findByEmail(String email) {
         PersonFullDto personFullDto = personRepository.findByEmail(email)
                 .map(PERSON_MAPPER::mapToDto)
@@ -64,16 +65,18 @@ public class PersonServiceImpl implements PersonService {
         return personPreviewDtos;
     }
 
+    @Transactional
     @Override public PersonFullDto create(PersonCreateDto createDto) {
         Person personToSave = PERSON_MAPPER.mapToEntity(createDto);
 
-        personToSave.getAnimals().forEach(animal -> animal.setPerson(personToSave));
+        personToSave.getAnimals().forEach(animal -> animal.setPersons(singletonList(personToSave)));
         var savedPerson = personRepository.save(personToSave);
 
         log.info("PersonService -> created person. Id: {}", savedPerson.getId());
         return PERSON_MAPPER.mapToDto(savedPerson);
     }
 
+    @Transactional
     @Override public PersonFullDto update(PersonUpdateDto updateDto) {
         Person existingPerson = personRepository.findById(updateDto.getId())
                 .orElseThrow(() -> new PersonNotFoundException(updateDto.getId()));
@@ -86,10 +89,10 @@ public class PersonServiceImpl implements PersonService {
     }
 
     private Person fillFieldsPerson(Person personToChange, PersonUpdateDto updateDto) {
-        List<Animal> animals =
-                updateDto.getAnimals().stream()
-                        .map(ANIMAL_MAPPER::mapToEntity)
-                        .collect(toList());
+        List<Animal> animals = new ArrayList<>();
+//                updateDto.getAnimals().stream()
+////                        .map(ANIMAL_MAPPER::mapToEntity)
+//                        .collect(toList());
 
         personToChange.setName(updateDto.getName());
         personToChange.setAnimals(animals);

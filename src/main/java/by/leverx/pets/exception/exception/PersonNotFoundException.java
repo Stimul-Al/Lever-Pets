@@ -1,4 +1,4 @@
-package by.leverx.pets.exception;
+package by.leverx.pets.exception.exception;
 
 import javax.persistence.EntityNotFoundException;
 
@@ -16,5 +16,9 @@ public class PersonNotFoundException extends EntityNotFoundException {
 
     public PersonNotFoundException(String email) {
         super(format("Person by email:%s does not found.", email));
+    }
+
+    public PersonNotFoundException(String message, Long animalId) {
+        super(message + animalId);
     }
 }

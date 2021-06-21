@@ -6,56 +6,56 @@
 
     <changeSet id="1.1.0" author="Aliaksei Babashau">
         <sql>
-            INSERT INTO persons (id, email, name, password)
+            INSERT INTO pets.persons (id, email, name, password)
             VALUES (1, 'bob@gmail.com', 'Bob', '12345678');
 
-            INSERT INTO persons (id, email, name, password)
+            INSERT INTO pets.persons (id, email, name, password)
             VALUES (2, 'sam@gmail.com', 'Sam', '123123123');
 
-            INSERT INTO persons (id, email, name, password)
+            INSERT INTO pets.persons (id, email, name, password)
             VALUES (3, 'jack@gmail.com', 'Jack', 'qwerty');
 
-            INSERT INTO persons (id, email, name, password)
+            INSERT INTO pets.persons (id, email, name, password)
             VALUES (4, 'jhon@gmail.com', 'Jhon', '11112222');
         </sql>
 
         <sql>
-            INSERT INTO animals (id, name, type_animal)
+            INSERT INTO pets.animals (id, name, type_animal)
             VALUES (1, 'Space', 'CAT');
 
-            INSERT INTO animals (id, name, type_animal)
+            INSERT INTO pets.animals (id, name, type_animal)
             VALUES (2, 'Margaret', 'CAT');
 
-            INSERT INTO animals (id, name, type_animal)
+            INSERT INTO pets.animals (id, name, type_animal)
             VALUES (3, 'Tesla', 'CAT');
 
-            INSERT INTO animals (id, name, type_animal)
+            INSERT INTO pets.animals (id, name, type_animal)
             VALUES (4, 'Newton', 'CAT');
 
-            INSERT INTO animals (id, name, type_animal)
+            INSERT INTO pets.animals (id, name, type_animal)
             VALUES (5, 'Einstein', 'DOG');
 
-            INSERT INTO animals (id, name, type_animal)
+            INSERT INTO pets.animals (id, name, type_animal)
             VALUES (6, 'Lincoln', 'DOG');
 
-            INSERT INTO animals (id, name, type_animal)
+            INSERT INTO pets.animals (id, name, type_animal)
             VALUES (7, 'King', 'DOG');
 
-            INSERT INTO animals (id, name, type_animal)
+            INSERT INTO pets.animals (id, name, type_animal)
             VALUES (8, 'Curie', 'DOG');
         </sql>
 
         <sql>
-            INSERT INTO persons_animals (animal_id, person_id)
+            INSERT INTO pets.persons_animals (animal_id, person_id)
             VALUES (1, 1);
 
-            INSERT INTO persons_animals (animal_id, person_id)
+            INSERT INTO pets.persons_animals (animal_id, person_id)
             VALUES (2, 1);
 
-            INSERT INTO persons_animals (animal_id, person_id)
+            INSERT INTO pets.persons_animals (animal_id, person_id)
             VALUES (3, 3);
 
-            INSERT INTO persons_animals (animal_id, person_id)
+            INSERT INTO pets.persons_animals (animal_id, person_id)
             VALUES (4, 4);
         </sql>
     </changeSet>

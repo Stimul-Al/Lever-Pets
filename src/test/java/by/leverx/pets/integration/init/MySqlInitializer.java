@@ -7,9 +7,13 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.utility.DockerImageName;
 
+/**
+ *
+ * @author aliaksei.babashau
+ */
 public class MySqlInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
-    private static final DockerImageName DOCKER_IMAGE_NAME = DockerImageName.parse("mysql:latest");
+    private static final DockerImageName DOCKER_IMAGE_NAME = DockerImageName.parse("mysql:8.0.25");
 
     @Container
     private static final MySQLContainer<?> MYSQL = new MySQLContainer<>(DOCKER_IMAGE_NAME);

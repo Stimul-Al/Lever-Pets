@@ -6,25 +6,34 @@
 
     <changeSet id="1.0.0" author="Aliaksei Babashau">
         <sql>
+            create table animals
+            (
+            id bigint auto_increment
+            primary key,
+            name varchar(255) null,
+            type_animal varchar(255) null
+            );
+        </sql>
+
+        <sql>
             create table persons
             (
-            id       bigint auto_increment
+            id bigint auto_increment
             primary key,
-            email    varchar(255) null,
-            name     varchar(255) null,
+            email varchar(255) null,
+            name varchar(255) null,
             password varchar(255) null
             );
         </sql>
 
         <sql>
-            create table animals
+            create table persons_animals
             (
-            id          bigint auto_increment
-            primary key,
-            name        varchar(255) null,
-            type_animal varchar(255) null,
-            person_id   bigint       null,
-            constraint FK6qj68n7qaqt6vgllg14hlu37o
+            animal_id bigint not null,
+            person_id bigint not null,
+            constraint FKjjem7ctnx8a18kkct60k57yoy
+            foreign key (animal_id) references animals (id),
+            constraint FKk14wf2p4ny6vivy597pfusxci
             foreign key (person_id) references persons (id)
             );
         </sql>
