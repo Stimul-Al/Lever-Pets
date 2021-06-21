@@ -50,6 +50,13 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- Database -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -117,7 +124,6 @@
             <scope>runtime</scope>
         </dependency>
 
-
         <!-- Swagger -->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -129,9 +135,7 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger.version}</version>
         </dependency>
-
     </dependencies>
-
 
     <profiles>
         <profile>
@@ -142,12 +146,6 @@
                 </property>
             </activation>
             <dependencies>
-                <!-- Database -->
-                <dependency>
-                    <groupId>mysql</groupId>
-                    <artifactId>mysql-connector-java</artifactId>
-                    <version>${mysql.version}</version>
-                </dependency>
             </dependencies>
         </profile>
         <profile>
