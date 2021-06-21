@@ -1,0 +1,9 @@
+applications:
+  - name: pets
+  memory: 1024M
+  path: target/Pets-0.0.1-SNAPSHAT.jar
+  random-route: true
+  buildpacks:
+    - sap_java_buildpack
+  env:
+    SPRING_PROFILES_DEFAULT: dev

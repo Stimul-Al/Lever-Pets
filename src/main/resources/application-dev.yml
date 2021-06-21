@@ -1,16 +1,16 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5433/pets
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
     driver-class-name: org.postgresql.Driver
 
 
   liquibase:
     change-log: classpath:liquibase/master.xml
     url: jdbc:postgresql://localhost:5433/pets
-    user: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    user: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
     enabled: true
 
   jpa:
