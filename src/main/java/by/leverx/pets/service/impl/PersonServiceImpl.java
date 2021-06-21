@@ -6,7 +6,7 @@ import by.leverx.pets.dto.person.PersonPreviewDto;
 import by.leverx.pets.dto.person.PersonUpdateDto;
 import by.leverx.pets.entity.Animal;
 import by.leverx.pets.entity.Person;
-import by.leverx.pets.exception.PersonNotFoundException;
+import by.leverx.pets.exception.exception.PersonNotFoundException;
 import by.leverx.pets.repository.PersonRepository;
 import by.leverx.pets.service.PersonService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static by.leverx.pets.mapper.PersonMapper.PERSON_MAPPER;
-import static java.util.Arrays.asList;
+import static java.util.Collections.singletonList;
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -69,7 +69,7 @@ public class PersonServiceImpl implements PersonService {
     @Override public PersonFullDto create(PersonCreateDto createDto) {
         Person personToSave = PERSON_MAPPER.mapToEntity(createDto);
 
-        personToSave.getAnimals().forEach(animal -> animal.setPersons(asList(personToSave)));
+        personToSave.getAnimals().forEach(animal -> animal.setPersons(singletonList(personToSave)));
         var savedPerson = personRepository.save(personToSave);
 
         log.info("PersonService -> created person. Id: {}", savedPerson.getId());
@@ -88,7 +88,6 @@ public class PersonServiceImpl implements PersonService {
         return PERSON_MAPPER.mapToDto(changedPerson);
     }
 
-    @Transactional
     private Person fillFieldsPerson(Person personToChange, PersonUpdateDto updateDto) {
         List<Animal> animals = new ArrayList<>();
 //                updateDto.getAnimals().stream()

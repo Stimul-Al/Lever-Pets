@@ -1,10 +1,8 @@
 package by.leverx.pets.deal;
 
 import by.leverx.pets.dto.deal.DealDto;
-import by.leverx.pets.exception.AnimalNotFoundException;
 import by.leverx.pets.integration.AbstractIntegrationTest;
 import lombok.var;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

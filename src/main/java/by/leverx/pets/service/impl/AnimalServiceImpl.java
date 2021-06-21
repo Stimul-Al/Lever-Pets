@@ -4,7 +4,7 @@ import by.leverx.pets.dto.animal.AnimalCreateDto;
 import by.leverx.pets.dto.animal.AnimalFullDto;
 import by.leverx.pets.dto.animal.AnimalUpdateDto;
 import by.leverx.pets.entity.Animal;
-import by.leverx.pets.exception.AnimalNotFoundException;
+import by.leverx.pets.exception.exception.AnimalNotFoundException;
 import by.leverx.pets.repository.AnimalRepository;
 import by.leverx.pets.service.AnimalService;
 import lombok.RequiredArgsConstructor;
@@ -72,7 +72,6 @@ public class AnimalServiceImpl implements AnimalService {
         return ANIMAL_MAPPER.mapToDto(changedAnimal);
     }
 
-    @Transactional
     private Animal fillFieldsEntity(Animal animal, AnimalUpdateDto updateDto) {
         animal.setTypeAnimal(updateDto.getTypeAnimal());
         animal.setName(updateDto.getName());

@@ -1,5 +1,7 @@
-package by.leverx.pets.exception;
+package by.leverx.pets.exception.handler;
 
+import by.leverx.pets.exception.exception.AnimalSameException;
+import by.leverx.pets.exception.exception.PersonSameException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

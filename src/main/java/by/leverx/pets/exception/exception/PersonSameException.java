@@ -1,4 +1,4 @@
-package by.leverx.pets.exception;
+package by.leverx.pets.exception.exception;
 
 /**
  *

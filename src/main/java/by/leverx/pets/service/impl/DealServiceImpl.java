@@ -3,9 +3,9 @@ package by.leverx.pets.service.impl;
 import by.leverx.pets.dto.deal.DealDto;
 import by.leverx.pets.entity.Animal;
 import by.leverx.pets.entity.Person;
-import by.leverx.pets.exception.AnimalNotFoundException;
-import by.leverx.pets.exception.AnimalSameException;
-import by.leverx.pets.exception.PersonSameException;
+import by.leverx.pets.exception.exception.AnimalNotFoundException;
+import by.leverx.pets.exception.exception.AnimalSameException;
+import by.leverx.pets.exception.exception.PersonSameException;
 import by.leverx.pets.repository.AnimalRepository;
 import by.leverx.pets.repository.PersonRepository;
 import by.leverx.pets.service.DealService;
@@ -41,8 +41,10 @@ public class DealServiceImpl implements DealService {
 
         validate(ownersFirstAnimal, ownersSecondAnimal, firstAnimal, secondAnimal);
 
-        saveChanges(exchangeAnimals(ownersFirstAnimal, firstAnimal, secondAnimal),
-                        exchangeAnimals(ownersSecondAnimal, secondAnimal, firstAnimal));
+        List<Person> ownersFirstAnimals = exchangeAnimals(ownersFirstAnimal, firstAnimal, secondAnimal);
+        List<Person> ownersSecondAnimals = exchangeAnimals(ownersSecondAnimal, secondAnimal, firstAnimal);
+
+        saveChanges(ownersFirstAnimals, ownersSecondAnimals);
     }
 
     private void saveChanges(List<Person> ownersFirstAnimal, List<Person> ownersSecondAnimal) {
