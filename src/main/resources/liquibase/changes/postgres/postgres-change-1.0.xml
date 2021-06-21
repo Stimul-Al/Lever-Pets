@@ -1,0 +1,49 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                           http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="1.0.0" author="Aliaksei Babashau">
+        <sql>
+            create table animals
+            (
+            id          bigserial not null
+            constraint animals_pkey
+            primary key,
+            name        varchar(255),
+            type_animal varchar(255)
+            );
+
+            alter table animals
+            owner to postgres;
+
+            create table persons
+            (
+            id       bigserial not null
+            constraint persons_pkey
+            primary key,
+            email    varchar(255),
+            name     varchar(255),
+            password varchar(255)
+            );
+
+            alter table persons
+            owner to postgres;
+
+            create table persons_animals
+            (
+            person_id bigint not null
+            constraint fkenjoksg8t36t5jx2kdf1u3yid
+            references persons,
+            animal_id bigint not null
+            constraint fk5sk1hc7x4v8c1qggvrcrgbas8
+            references animals
+            );
+
+            alter table persons_animals
+            owner to postgres;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
