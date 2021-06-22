@@ -1,7 +1,5 @@
 #Pets
-___
 ## [Description](#description)
-___
 * A person can have an animal
 * Animals are dogs and cats
 * If person disappeared, his animals disappeared too
@@ -16,7 +14,6 @@ ___
 
 
 ## [Database](#database)
-___
 ### [Jpa layer](#jpa_layer)
 
 ![](docs/img/entity.png)
@@ -26,11 +23,9 @@ ___
 ![](docs/img/database_diagram.png)
 
 ## [Postman](#postman)
-___
 Test Api by [Postman](docs/postman/Pets%20api.postman_collection.json)
 
 ## [Cloud](#cloud)
-___
 ![](docs/img/ondemand.com.png)
 
 
