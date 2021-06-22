@@ -16,7 +16,8 @@ mvn clean install -P <profile-id>
 ```
 mvn -P<profileId> spring-boot:run
 ```  
-`<profile-id>` is id of the profile for a build (**dev** or **prod**).  
+`<profile-id>` it is id of the profile for a build (**dev** or **prod**).  
+
 **Example:** `mvn -Pdev spring-boot:run`
 
 
