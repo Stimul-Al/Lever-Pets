@@ -1,5 +1,5 @@
-#[Pets](#Pets)
----
+# [Pets](#Pets)
+
 ## [Description](#Description)
 * A person can have an animal
 * Animals are dogs and cats
