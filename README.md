@@ -1,4 +1,5 @@
 #[Pets](#Pets)
+---
 ## [Description](#Description)
 * A person can have an animal
 * Animals are dogs and cats
@@ -6,7 +7,7 @@
 * Animal couldn't have owner
 * Owners can swap animals
 
-### [Maven compile & run commands](#Maven compile and run commands)
+### [Maven compile & run commands](#Maven_compile_and_run_commands)
 ```mvn clean install -P <profile-id>```  
 ```mvn -P<profileId> spring-boot:run```  
 `<profile-id>` is id of the profile for a build (**dev** or **prod**).  
@@ -14,11 +15,11 @@
 
 
 ## [Database](#Database)
-### [Jpa layer](#Jpa layer)
+### [Jpa layer](#Jpa_layer)
 
 ![](docs/img/entity.png)
 
-### [Database layer](#Database layer)
+### [Database layer](#Database_layer)
 
 ![](docs/img/database_diagram.png)
 
