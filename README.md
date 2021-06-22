@@ -3,11 +3,11 @@
 ## Description
 
 ### General description
-* A person can have an animal
-* Animals are dogs and cats
-* If person disappeared, his animals disappeared too
-* Animal couldn't have owner
-* Owners can swap animals
+* A person can have several animals
+* Animal can have several owners
+* Animals are dogs or cats
+* Removing a person leads to the removal of his animals
+* Owners can exchange animals
 
 ### Maven compile & run commands
 ```
