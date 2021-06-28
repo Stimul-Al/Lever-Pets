@@ -69,6 +69,9 @@ To deploy application
     host: pets-16-05-1996
     buildpacks:
       - sap_java_buildpack
+    services:
+      - postgres
+      - pets-logs
     env:
       SPRING_PROFILES_DEFAULT: prod
   ```

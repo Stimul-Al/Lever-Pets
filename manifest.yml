@@ -1,11 +1,11 @@
 ---
 applications:
 - name: pets
-  memory: 1024M
+  memory: 1G
+  disk_quota: 512M
   path: target/Pets-0.0.1-SNAPSHOT.jar
-  random-route: true
-  host: pets-16-05-1996
   buildpacks:
-    - sap_java_buildpack
-  env:
-    SPRING_PROFILES_DEFAULT: prod
+    - https://github.com/cloudfoundry/java-buildpack.git#v4.16
+  services:
+    - pets-db
+    - pets-logs

@@ -1,15 +1,14 @@
 spring:
   datasource:
     url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/pets
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:root}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   liquibase:
+    user: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     change-log: classpath:liquibase/master.xml
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/pets
-    user: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:root}
     enabled: true
 
   jpa:
@@ -19,3 +18,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+logging:
+  level:
+    root: info
+    org.hibernate.type.descriptor.sql.BasicBinder: debug
+    org.hibernate.SQL: debug
