@@ -1,9 +1,6 @@
 spring:
   datasource:
-    url: ${vcap.services.postgreSQL-DB.credentials.url}
-    username: ${vcap.services.postgreSQL-DB.credentials.username}
-    password: ${vcap.services.postgreSQL-DB.credentials.password}
-    driver-class-name: org.postgresql.Driver
+    uri: ${cloud.services.postgresql-db.uri}
 
   liquibase:
     enabled: false
