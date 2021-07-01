@@ -1,31 +1,29 @@
-package by.leverx.pets.service.impl;
+package by.leverx.pets.repository.impl;
 
+import by.leverx.pets.repository.DestinationRepository;
 import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpUriRequest;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 
 import static com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor.getDestination;
 import static com.sap.cloud.sdk.cloudplatform.connectivity.HttpClientAccessor.getHttpClient;
 
-public class DestinationService {
+/**
+ *
+ * @author aliaksei.babashau
+ */
+@Repository
+public class DestinationRepositoryImpl implements DestinationRepository {
 
-    @Value("${destination.name}")
     private String destinationName;
 
-    @Value("${destination.uri}")
-    private HttpUriRequest google;
-
-    public void destination() {
+    @Override public void destination(HttpUriRequest httpUriRequest) throws IOException {
         HttpDestination destination = getDestination(destinationName).asHttp();
         HttpClient client = getHttpClient(destination);
 
-        try {
-            client.execute(google);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        client.execute(httpUriRequest);
     }
 }

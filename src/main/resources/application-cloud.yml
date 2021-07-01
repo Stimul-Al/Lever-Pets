@@ -12,6 +12,3 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
-destination:
-  name: ${cloud.services.destination.name}

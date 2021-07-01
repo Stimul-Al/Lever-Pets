@@ -63,6 +63,17 @@
             <version>2.0.0.RELEASE</version>
         </dependency>
 
+<!--        &lt;!&ndash; Xsuaa &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.sap.cloud.security.xsuaa</groupId>-->
+<!--            <artifactId>xsuaa-spring-boot-starter</artifactId>-->
+<!--            <version>2.10.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency> &lt;!&ndash; required when using Spring Web `RestTemplate` with X.509 authentication method&ndash;&gt;-->
+<!--            <groupId>org.apache.httpcomponents</groupId>-->
+<!--            <artifactId>httpclient</artifactId>-->
+<!--        </dependency>-->
+
         <!-- SAP cloud -->
         <dependency>
             <groupId>com.sap.cloud.sdk.cloudplatform</groupId>
@@ -177,6 +188,13 @@
             <groupId>com.sap.hcp.cf.logging</groupId>
             <artifactId>cf-java-logging-support-logback</artifactId>
             <version>${cf.logback.version}</version>
+        </dependency>
+
+        <!-- Connectivity -->
+        <dependency>
+            <groupId>com.sap.cds</groupId>
+            <artifactId>cds-integration-cloud-sdk</artifactId>
+            <version>1.16.3</version>
         </dependency>
     </dependencies>
 
