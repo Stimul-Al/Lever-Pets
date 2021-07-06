@@ -189,13 +189,6 @@
             <artifactId>cf-java-logging-support-logback</artifactId>
             <version>${cf.logback.version}</version>
         </dependency>
-
-        <!-- Connectivity -->
-        <dependency>
-            <groupId>com.sap.cds</groupId>
-            <artifactId>cds-integration-cloud-sdk</artifactId>
-            <version>1.16.3</version>
-        </dependency>
     </dependencies>
 
     <profiles>

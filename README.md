@@ -119,54 +119,8 @@ services:
 ```
 * Add file `src/main/resources/logback-spring.xml`: [logback-spring.xml](src/main/resources/logback-spring.xml)
 
-## Destination 
-* Create and bind `destination service` to app
-* Add service to manifest: 
-```
-services:
-  ...
-  - destination
-  ...
-```
-
-## Connectivity
-
-* Create and bind `connectivity service` to app
-* Add service to manifest:
-```
-services:
-  ...
-  - connectivity
-  ...
-```
-* Create file `default-env.json` in root folder and supply the `VCAP_SERVICES`: [default-env.json](default-env.json)
-* Add dependency to POM file:
-```
-<dependency>
-  <groupId>com.sap.cds</groupId>
-  <artifactId>cds-integration-cloud-sdk</artifactId>
-</dependency>
-```
-
-* Enable SSH to app: `cf enabled-ssh <app-name>`
-* Restart aap: `cf restart <app-name>`
-* Create an SSH session:
-
-```
-cf ssh <app-name> -L <local-proxy-host><local-proxy-port>:<proxy-host>:<proxy-port>
-```
-**For my project:**
-```
-cf ssh pets -L localhost:1234:connectivityproxy.internal.cf.eu10.hana.ondemand.com:20003
-```
-
-**Result:**
-![](docs/img/connectivity.png)
-
-* Replace the value of the field `VCAP_SERVICES.connectivity.credentials.onpremise_proxy_host` in default-env.json with `localhost`.
-
-
 ## LINK
 * For more information about add log look here: [**Logging**](https://sap.github.io/cloud-sdk/docs/java/guides/logging-overview/)
 * For more information about connect destination service look here: [**Use Destinations To Connect To Other Systems and Services**](https://sap.github.io/cloud-sdk/docs/java/features/connectivity/sdk-connectivity-destination-service).
+* Proxy project [here](https://github.com/Stimul-Al/Pets-proxy)
 

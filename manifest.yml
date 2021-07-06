@@ -9,7 +9,5 @@ applications:
     services:
       - pets-db
       - pets-logs
-      - destination-test
-      - connectivity
     env:
       SPRING_PROFILE_DEFAULT: cloud
