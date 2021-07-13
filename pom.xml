@@ -39,6 +39,10 @@
         <h2>1.4.200</h2>
 
         <sap.cloud>3.46.0</sap.cloud>
+
+        <sap.cloud.security.version>2.10.2</sap.cloud.security.version>
+
+        <apache.httpclient.version>4.5.13</apache.httpclient.version>
     </properties>
 
     <dependencies>
@@ -63,16 +67,17 @@
             <version>2.0.0.RELEASE</version>
         </dependency>
 
-<!--        &lt;!&ndash; Xsuaa &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.sap.cloud.security.xsuaa</groupId>-->
-<!--            <artifactId>xsuaa-spring-boot-starter</artifactId>-->
-<!--            <version>2.10.0</version>-->
-<!--        </dependency>-->
-<!--        <dependency> &lt;!&ndash; required when using Spring Web `RestTemplate` with X.509 authentication method&ndash;&gt;-->
-<!--            <groupId>org.apache.httpcomponents</groupId>-->
-<!--            <artifactId>httpclient</artifactId>-->
-<!--        </dependency>-->
+        <!-- Xsuaa -->
+        <dependency>
+            <groupId>com.sap.cloud.security.xsuaa</groupId>
+            <artifactId>xsuaa-spring-boot-starter</artifactId>
+            <version>2.10.2</version>
+        </dependency>
+        <dependency> <!-- required when using Spring Web `RestTemplate` with X.509 authentication method-->
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${apache.httpclient.version}</version>
+        </dependency>
 
         <!-- SAP cloud -->
         <dependency>
@@ -120,6 +125,12 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.cloud.security</groupId>
+            <artifactId>java-security-test</artifactId>
+            <version>${sap.cloud.security.version}</version>
             <scope>test</scope>
         </dependency>
 
