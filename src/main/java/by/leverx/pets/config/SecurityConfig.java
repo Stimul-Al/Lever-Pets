@@ -36,19 +36,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override protected void configure(HttpSecurity http) throws Exception {
         http
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                    .sessionManagement()
+                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .authorizeRequests()
-                .antMatchers(DELETE).hasAuthority("Delete")
-                .antMatchers(PUT).hasAuthority("Edit")
-                .antMatchers(POST).hasAuthority("Edit")
-                .antMatchers(GET).hasAuthority("Read")
+                    .authorizeRequests()
+                    .antMatchers(DELETE).hasAuthority("Delete")
+                    .antMatchers(PUT).hasAuthority("Edit")
+                    .antMatchers(POST).hasAuthority("Edit")
+                    .antMatchers(GET).hasAuthority("Read")
                 .and()
-                .oauth2ResourceServer()
-                .bearerTokenResolver(new IasXsuaaExchangeBroker(xsuaaTokenFlows))
-                .jwt()
-                .jwtAuthenticationConverter(getJwtAuthenticationConverter());
+                    .oauth2ResourceServer()
+                    .bearerTokenResolver(new IasXsuaaExchangeBroker(xsuaaTokenFlows))
+                    .jwt()
+                    .jwtAuthenticationConverter(getJwtAuthenticationConverter());
     }
 
     private Converter<Jwt, AbstractAuthenticationToken> getJwtAuthenticationConverter() {

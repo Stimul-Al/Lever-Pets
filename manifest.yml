@@ -13,21 +13,3 @@ applications:
       - xsuaa
     env:
       SPRING_PROFILE_DEFAULT: cloud
-
-  - name: approuter-pets-xsuaa
-    path: approuter
-    buildpaks:
-      - nodejs_buildpack
-    memory: 128M
-    routes:
-      - route: approuter-pets-xsuaa.cfapps.eu10.hana.ondemand.com
-    env:
-      BP_NODE_VERSION: '12.12.0'
-      destinations:
-        '[
-            {"name":"token-destination",
-            "url":"https://pets-active-wolf-jm.cfapps.eu10.hana.ondemand.com",
-            "forwardAuthToken":true}
-          ]'
-    services:
-      - xsuaa

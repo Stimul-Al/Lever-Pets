@@ -56,16 +56,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter</artifactId>
-            <version>3.0.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-open-service-broker-core</artifactId>
-            <version>2.0.0.RELEASE</version>
-        </dependency>
 
         <!-- Xsuaa -->
         <dependency>
@@ -77,18 +67,6 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>${apache.httpclient.version}</version>
-        </dependency>
-
-        <!-- SAP cloud -->
-        <dependency>
-            <groupId>com.sap.cloud.sdk.cloudplatform</groupId>
-            <artifactId>scp-cf</artifactId>
-            <version>${sap.cloud}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sap.cds</groupId>
-            <artifactId>cds-feature-cloudfoundry</artifactId>
-            <version>1.16.2</version>
         </dependency>
 
         <!-- Database -->
