@@ -6,9 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,8 +16,6 @@ import java.util.List;
 @Data
 @Builder
 public class PersonCreateDto {
-
-    private static final long MIN_LENGTH = 8;
 
     @NotBlank
     @ApiModelProperty(example = "Bob", notes = "Name of this person")
@@ -31,10 +27,9 @@ public class PersonCreateDto {
     private String email;
 
     @NotBlank
-    @Min(MIN_LENGTH)
     @ApiModelProperty(example = "qwerty123456", notes = "Password of this person")
     private String password;
 
     @ApiModelProperty(example = "Animals of this person")
-    private List<AnimalCreateDto> animals = new ArrayList<>();
+    private List<AnimalCreateDto> animals;
 }

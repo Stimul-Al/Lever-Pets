@@ -1,0 +1,1831 @@
+{
+	"info": {
+		"_postman_id": "d6d0bf3c-b164-4549-8be8-c4eb1acde7cd",
+		"name": "Pets api",
+		"description": "Api allows you to control the system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "animals",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Find one animal by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/animals/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97338282",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/animals/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"animals",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/animals/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"animals",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/animals/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"animals",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/animals/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"animals",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete animal by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/animals/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97338282",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/animals/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"animals",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/animals/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"animals",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/animals/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"animals",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/animals/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"animals",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Find all animals by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/animals",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"animals"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Create animal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Bob\",\n    \"typeAnimal\": \"CAT\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/animals",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"animals"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Bob\",\n    \"typeAnimal\": \"CAT\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Bob\",\n    \"typeAnimal\": \"CAT\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Bob\",\n    \"typeAnimal\": \"CAT\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Bob\",\n    \"typeAnimal\": \"CAT\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Bob\",\n    \"typeAnimal\": \"CAT\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Update animal",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"Bob\",\n    \"typeAnimal\": \"CAT\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/animals",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"animals"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"name\": \"Bob\",\n    \"typeAnimal\": \"CAT\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"name\": \"Bob\",\n    \"typeAnimal\": \"CAT\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"name\": \"Bob\",\n    \"typeAnimal\": \"CAT\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"name\": \"Bob\",\n    \"typeAnimal\": \"CAT\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"name\": \"Bob\",\n    \"typeAnimal\": \"CAT\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "persons",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Find one person by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/persons/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97338282",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/persons/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"persons",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/persons/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"persons",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/persons/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"persons",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/persons/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"persons",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete person",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/persons/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97338282",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/persons/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"persons",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/persons/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"persons",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/persons/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"persons",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/persons/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"persons",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Find all persons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/persons",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Create person",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"animals\": [\n        {\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        },\n        {\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        }\n    ],\n    \"email\": \"Bob@gmail.com\",\n    \"name\": \"Bob\",\n    \"password\": \"qwerty123456\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/persons",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"animals\": [\n        {\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        },\n        {\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        }\n    ],\n    \"email\": \"Bob@gmail.com\",\n    \"name\": \"Bob\",\n    \"password\": \"qwerty123456\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"animals\": [\n        {\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        },\n        {\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        }\n    ],\n    \"email\": \"Bob@gmail.com\",\n    \"name\": \"Bob\",\n    \"password\": \"qwerty123456\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"animals\": [\n        {\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        },\n        {\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        }\n    ],\n    \"email\": \"Bob@gmail.com\",\n    \"name\": \"Bob\",\n    \"password\": \"qwerty123456\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"animals\": [\n        {\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        },\n        {\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        }\n    ],\n    \"email\": \"Bob@gmail.com\",\n    \"name\": \"Bob\",\n    \"password\": \"qwerty123456\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"animals\": [\n        {\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        },\n        {\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        }\n    ],\n    \"email\": \"Bob@gmail.com\",\n    \"name\": \"Bob\",\n    \"password\": \"qwerty123456\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Update animal",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"animals\": [\n        {\n            \"id\": 1,\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        }\n    ],\n    \"id\": 1,\n    \"name\": \"Bob\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/persons",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"animals\": [\n        {\n            \"id\": 1,\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        }\n    ],\n    \"id\": 1,\n    \"name\": \"Bob\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"animals\": [\n        {\n            \"id\": 1,\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        }\n    ],\n    \"id\": 1,\n    \"name\": \"Bob\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"animals\": [\n        {\n            \"id\": 1,\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        }\n    ],\n    \"id\": 1,\n    \"name\": \"Bob\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"animals\": [\n        {\n            \"id\": 1,\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        }\n    ],\n    \"id\": 1,\n    \"name\": \"Bob\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"animals\": [\n        {\n            \"id\": 1,\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Bob\",\n            \"typeAnimal\": \"CAT\"\n        }\n    ],\n    \"id\": 1,\n    \"name\": \"Bob\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/persons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "deal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_animal\": -93307015,\n    \"second_animal\": -83565909\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/deals",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"deals"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_animal\": -93307015,\n    \"second_animal\": -83565909\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/deals",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deals"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_animal\": -93307015,\n    \"second_animal\": -83565909\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/deals",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deals"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_animal\": -93307015,\n    \"second_animal\": -83565909\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/deals",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deals"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_animal\": -93307015,\n    \"second_animal\": -83565909\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/deals",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deals"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_animal\": -93307015,\n    \"second_animal\": -83565909\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/deals",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deals"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "//localhost:8080/",
+			"type": "string"
+		}
+	]
+}
